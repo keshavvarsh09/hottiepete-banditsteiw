@@ -73,8 +73,8 @@
         │             │           │
         ▼             ▼           ▼
    ┌─────────┐  ┌──────────┐ ┌────────────┐
-   │  Groq   │  │  Fish    │ │Pollinations│
-   │  LLM    │  │  Audio   │ │  AI Images │
+   │  Groq   │  │  Fish    │ │ ImgLink.ai │
+   │  LLM    │  │  Audio   │ │  Widescreen│
    │ (script)│  │  (TTS)   │ │  (B-roll)  │
    └─────────┘  └──────────┘ └────────────┘
 ```
@@ -83,7 +83,7 @@
 
 ```
  ┌───────┐    ┌─────────┐    ┌──────────┐    ┌───────────────┐    ┌──────────┐    ┌───────┐
- │ Topic │───▶│  Groq   │───▶│ Fish TTS │───▶│  Pollinations │───▶│ faster-  │───▶│ffmpeg │
+ │ Topic │───▶│  Groq   │───▶│ Fish TTS │───▶│  ImgLink.ai   │───▶│ faster-  │───▶│ffmpeg │
  │ Input │    │ Script  │    │ 2 Voices │    │  B-Roll Imgs  │    │ whisper  │    │Compose│
  └───────┘    └─────────┘    └──────────┘    └───────────────┘    │ Karaoke  │    └───┬───┘
                                                                   └──────────┘        │
@@ -104,7 +104,7 @@
 | **Database** | SQLite via SQLModel | Project/character/voice/job metadata |
 | **TTS** | Fish Audio API | High-quality multi-voice speech synthesis |
 | **Script Gen** | Groq API (Llama 3.3 70B) | Ultra-fast LLM script generation |
-| **B-Roll** | Pollinations AI | Free AI image generation (no API key) |
+| **B-Roll** | ImgLink.ai | Widescreen AI image generation (anonymous fallback) |
 | **Transcription** | faster-whisper (local) | Word-level timestamps for karaoke subs |
 | **Video** | FFmpeg | Composition, scaling, subtitle burn-in |
 | **Voice Isolation** | Demucs (local) | Vocal / music separation |
@@ -260,7 +260,7 @@ hottiepete-banditsteiw/
 │       ├── pipeline_isolation.py  # Demucs vocal isolation
 │       └── providers/
 │           ├── assemble.py        # ffmpeg composition
-│           ├── broll.py           # Pollinations image generation
+│           ├── broll.py           # ImgLink B-roll image generation
 │           ├── cards.py           # Reddit / Tweet card renderer
 │           ├── chatstory.py       # Chat bubble frame renderer
 │           ├── editing.py         # ffmpeg scale / crop / stack
